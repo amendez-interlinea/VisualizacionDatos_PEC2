@@ -1,0 +1,6 @@
+readr
+dplyr
+wordcloud2
+ggplot2
+ggridges
+scales
