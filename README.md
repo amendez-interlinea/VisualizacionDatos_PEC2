@@ -70,6 +70,14 @@ El uso de precios ponderados permite reducir el efecto de múltiples registros e
 
 ---
 
+## Video
+
+El video explicativo puede ser consultado por la UOC en:
+
+https://drive.google.com/file/d/1RJ1_p2ItRqhnH9G-mEGvF1Qz9U1r7-k5/view?usp=sharing
+
+---
+
 ## Enlaces
 
 A continuación se presentan las visualizaciones desarrolladas:
@@ -84,7 +92,10 @@ A continuación se presentan las visualizaciones desarrolladas:
   https://pec2.hass.com.mx/radar/PEC2_radar.asp  
 
 - Ridgeline Chart:  
-  https://pec2.hass.com.mx/ridgeline/PEC2_ridgeline.html  
+  https://pec2.hass.com.mx/ridgeline/PEC2_ridgeline.html
+
+- Video explicativo:  
+  https://pec2.hass.com.mx/video/PEC2_Luis_Armando_Mendez_Espinosa.mp4  
 
 ---
 
