@@ -70,6 +70,14 @@ El uso de precios ponderados permite reducir el efecto de múltiples registros e
 
 ---
 
+## Video
+
+El video explicativo puede ser consultado por la UOC en:
+
+https://drive.google.com/file/d/1RJ1_p2ItRqhnH9G-mEGvF1Qz9U1r7-k5/view?usp=sharing
+
+---
+
 ## Enlaces
 
 A continuación se presentan las visualizaciones desarrolladas:
