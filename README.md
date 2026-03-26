@@ -92,7 +92,10 @@ A continuación se presentan las visualizaciones desarrolladas:
   https://pec2.hass.com.mx/radar/PEC2_radar.asp  
 
 - Ridgeline Chart:  
-  https://pec2.hass.com.mx/ridgeline/PEC2_ridgeline.html  
+  https://pec2.hass.com.mx/ridgeline/PEC2_ridgeline.html
+
+- Video explicativo:  
+  https://pec2.hass.com.mx/video/PEC2_Luis_Armando_Mendez_Espinosa.mp4  
 
 ---
 
