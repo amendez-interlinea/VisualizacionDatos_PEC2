@@ -1,0 +1,99 @@
+---
+title: "Gráfico de RidgeLine"
+author: "Luis Armando Méndez Espinosa"
+date: "2026-03-24"
+output: html_document
+---
+
+#### * También es conocida como Joyplot
+
+#### * Su uso moderno fue popularizado por Claus Wilke quien es el desarrollador del paquete ggridges para Lenguaje R
+
+#### * Requiere de variables cuantitativas continuas con multilpes observaciones por grupo y variables de agrupación o categorías
+
+#### * Permite comparar distribuciobes completas, muestra en un solo gráfico la dispersión, simetría y concentración de varios grupos de observaciones
+
+#### * Como inconvenientes encuentro que puede ser dificil de interpretar para usuarios no técnicos
+
+#### * Las aplicaciones comunes pueden ser: comparativo de distribución de ingresos por año, temperaturas por mes, evolución de precios en el tiempo, cambios de patrones de consumo
+
+
+
+### Ejemplo en Lenguaje R
+
+```{r configurar, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##### Cargar librerías
+
+```{r librerias, message=FALSE, warning=FALSE}
+library( readr )
+library( dplyr )
+library( ggplot2 )
+library( ggridges )
+library( scales )
+```
+
+##### Cargar los datos del archivo CSV
+
+```{r datos, message=FALSE, warning=FALSE}
+datos <- read_csv("~/Documents/Educación/Maestría UOC/3) Visualización de Datos/PEC 2/PEC2/Precios.csv")
+```
+
+##### Realizar transformaciones para asegurar tipos de datos correctos
+
+```{r transformar, message=FALSE, warning=FALSE}
+datos <- datos %>%
+  mutate(
+    Fecha     = as.Date(Fecha),
+    Ejercicio = factor(Ejercicio, levels = sort(unique(Ejercicio))),
+    Precio   = as.numeric(Precio)
+  ) %>%
+  filter(!is.na(Precio), Precio > 0)
+```
+
+##### Mostrar la cantidad de observaciones del dataset
+
+```{r registros, message=FALSE, warning=FALSE}
+nrow( datos )
+```
+
+##### Crear gráfico de Ridgeline mediante la función ggplot
+
+```{r graficar, message=FALSE, warning=FALSE}
+ggplot(datos, aes(x = Precio, y = Ejercicio, fill = Ejercicio)) +
+  
+  geom_density_ridges(
+    alpha          = 0.7,
+    scale          = 1.1,
+    rel_min_height = 0.01,
+    size           = 0.35
+  ) +
+  
+  labs(
+    title    = "Ridgeline Chart",
+    subtitle = "Aguacates HASS, precios de compra por año del ejercicio 2020 al 2025",
+    x        = "Precio de compra en MXN",
+    y        = "Ejercicio"
+  ) +
+  
+  scale_x_continuous(labels = comma_format(accuracy = 0.01)) +
+
+  theme_ridges(font_size = 12, grid = TRUE) +
+  
+  theme(
+    legend.position = "none",
+    plot.title      = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle   = element_text(hjust = 0.5),
+    axis.title      = element_text(face = "bold")
+  )
+```
+
+#### La gráfica muestra la distribución de los precios de compra de aguacate variedad Hass de los ultimos 5 años, utilizando una serie diaria ponderada.
+
+#### Se observa que algunos años presentan distribuciones más concentradas, lo que indica mayor estabilidad, mientras que otros muestran mayor dispersión, reflejando volatilidad en el mercado.
+
+#### Además, se identifican desplazamientos hacia valores más altos en ciertos años, lo que sugiere cambios estructurales en el nivel de precios.
+
+#### La técnica permite analizar no solo el promedio, sino la forma completa de la distribución, lo cual no sería posible con gráficos tradicionales como líneas o barras.

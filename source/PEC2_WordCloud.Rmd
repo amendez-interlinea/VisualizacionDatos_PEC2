@@ -1,0 +1,59 @@
+---
+title: "Gráfico de WordCloud o Tag Cloud"
+author: "Luis Armando Méndez Espinosa"
+date: "2026-03-24"
+output: html_document
+---
+
+#### * Surge a inicios de los años 2000, se utiliza para visualizar la popularidad de etiquetas o tags
+
+#### * El termino Tag Cloud fue creado por Thomas Vander Wal en 2004, posteriormente evolucionó hacia Word Cloud
+
+#### * Admite texto libre y no estructurado, requiere el conteo de la frequencia de la aparición de cada palabra
+
+#### * Es muy intuitiva y fácil de interpretar, permite identificar rápidamente los temas principales o las palabras dominantes y ofrece una comunicación visual rápida
+
+#### * Como inconvenientes encuentro que puede ser engañosa ya que la frecuencia de aparición de una palabra no es igual a su importancia real, además las palabras largas suelen parecer mas importantes, se presenta un sesgo visual por diseño
+
+#### * Las aplicaciones comunes suelen ser análisis de comentarios, opiniones o reseñas de clientes, exploración de noticias, análisis de tendencias en redes sociales
+
+
+### Ejemplo en Lenguaje R
+
+```{r configurar, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##### Cargar librerías
+
+```{r librerias, message=FALSE, warning=FALSE}
+library( readr )
+library( dplyr )
+library( wordcloud2 )
+```
+
+##### Cargar los datos del archivo CSV de ejemplo
+
+```{r datos, message=FALSE, warning=FALSE}
+palabras <- read_csv("~/Documents/Educación/Maestría UOC/3) Visualización de Datos/PEC 2/PEC2/palabras.csv")
+```
+
+##### Crear el gráfico mediante la función WordCloud2
+
+```{r graficar, message=FALSE, warning=FALSE}
+wordcloud2( palabras, 
+    size            = 1, 
+    minSize         = 0, 
+    gridSize        = 0,
+    fontFamily      = 'Segoe UI', 
+    fontWeight      = 'bold',
+    color           = 'random-dark', 
+    backgroundColor = "white",
+    minRotation     = -pi/4, 
+    maxRotation     = pi/4, 
+    shuffle         = TRUE,
+    rotateRatio     = 0.4, 
+    shape           = 'diamond', 
+    ellipticity     = 0.65
+    )
+```
