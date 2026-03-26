@@ -9,9 +9,9 @@ output: html_document
 
 #### * Su uso moderno fue popularizado por Claus Wilke quien es el desarrollador del paquete ggridges para Lenguaje R
 
-#### * Requiere de variables cuantitativas continuas con multilpes observaciones por grupo y variables de agrupación o categorías
+#### * Requiere de variables cuantitativas continuas con multiples observaciones por grupo y variables de agrupación o categorías
 
-#### * Permite comparar distribuciobes completas, muestra en un solo gráfico la dispersión, simetría y concentración de varios grupos de observaciones
+#### * Permite comparar distribuciones completas, muestra en un solo gráfico la dispersión, simetría y concentración de varios grupos de observaciones
 
 #### * Como inconvenientes encuentro que puede ser dificil de interpretar para usuarios no técnicos
 
